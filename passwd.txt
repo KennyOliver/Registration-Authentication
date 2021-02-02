@@ -1,1 +1,2 @@
-fredgren xyzzy5
+fredgren, xyzzy5
+pythonic, programming1

@@ -1,5 +1,5 @@
 def check_digit(password):
-    """ returns True if password contaisn a digit otherwise False """
+    """ returns True if password contains a digit otherwise False """
     digit = False
     for item in password:
       if item.isdigit():
@@ -20,11 +20,16 @@ def get_username():
 
 
 def get_password():
-    """ get password 6+ char & contains 1 digit """
-    password = input("\nEnter password with 6 characters and 1 digit\n--> ")
+    """ get password 8 char & contains 1 digit """
+    password = input("\nEnter password with at least 8 characters and 1 digit\n--> ")
     
-    while not ((len(password) == 6) and (check_digit(password) == True)) :
-      password = input("Password must be 6 characters, containing 1 digit")
+    while not ((len(password) >= 8) and (check_digit(password) == True)) :
+      password = input("Password must be at least 8 characters, containing 1 digit")
+      
+    re_enter = input("Re-enter your password for verification\n--> ")
+    
+    while not (re_enter == password):
+      re_enter = input("Try again.\nRe-enter your password for verification\n--> ")
     
     return password
   
@@ -35,7 +40,7 @@ def register():
     user_password = get_password()
     
     # create record
-    record = user_name + " " + user_password + "\n"
+    record = user_name + ", " + user_password + "\n"
     
     # write record to file
     myfile = open("passwd.txt", "a")
