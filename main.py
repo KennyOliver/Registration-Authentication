@@ -43,7 +43,7 @@ def register():
     record = user_name + ", " + user_password + "\n"
     
     # write record to file
-    myfile = open("passwd.txt", "a")
+    myfile = open("passwords.txt", "a")
     myfile.write(record)
     myfile.close()
     
