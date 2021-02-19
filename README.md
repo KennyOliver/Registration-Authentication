@@ -4,4 +4,5 @@
 
 Python login/registration & authentication project
 
+---
 Kenny Oliver ©2021
